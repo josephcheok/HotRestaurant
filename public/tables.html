@@ -1,174 +1,185 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-<head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Bootstrap -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
 
-   <!-- Bootstrap -->
-   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- Bootstrap jQuery -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.js"
+      integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+      crossorigin="anonymous"
+    ></script>
+    <title>View Tables</title>
+  </head>
 
-   <!-- Bootstrap jQuery -->
-   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
-   </script>
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
-   </script>
-   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
-   </script>
-   <title>View Tables</title>
-</head>
-
-<body>
-   <div class="container">
-
+  <body>
+    <div class="container">
       <div class="jumbotron">
-         <h1 class="text-center"><span class="fa fa-fire"></span> Hot Restaurant</h1>
-         <hr>
-         <h2 class="text-center">Current Reservations and Waiting List</h2>
-         <br>
+        <h1 class="text-center">
+          <span class="fa fa-fire"></span> Hot Restaurant
+        </h1>
+        <hr />
+        <h2 class="text-center">Current Reservations and Waiting List</h2>
+        <br />
 
-         <div class="text-center">
-            <a href="/reserve"><button class="btn btn-lg btn-danger"><span class="fa fa-credit-card"></span> Make
-                  Reservation</button></a>
-            <a href="/"><button class="btn btn-lg btn-default"><span class="fa fa-home"></span></button></a>
-         </div>
+        <div class="text-center">
+          <a href="/reserve"
+            ><button class="btn btn-lg btn-danger">
+              <span class="fa fa-credit-card"></span> Make Reservation
+            </button></a
+          >
+          <a href="/"
+            ><button class="btn btn-lg btn-default">
+              <span class="fa fa-home"></span></button
+          ></a>
+        </div>
       </div>
 
       <div class="row">
-         <div class="col-lg-12">
-
-            <!-- Current Tables (booked) -->
-            <div class="card">
-               <div class="card-header">
-                  <h4>Current Reservations</h4>
-               </div>
-               <div class="card-body">
-                  <ul id="tableList" class="list-group"></ul>
-               </div>
+        <div class="col-lg-12">
+          <!-- Current Tables (booked) -->
+          <div class="card">
+            <div class="card-header">
+              <h4>Current Reservations</h4>
             </div>
-
-            <!-- Waiting List Card -->
-            <div class="card mt-4">
-               <div class="card-header">
-                  <h4>Waiting List</h4>
-               </div>
-               <div class="card-body">
-                  <ul id="waitList" class="list-group"></ul>
-               </div>
+            <div class="card-body">
+              <ul id="tableList" class="list-group"></ul>
             </div>
-         </div>
+          </div>
+
+          <!-- Waiting List Card -->
+          <div class="card mt-4">
+            <div class="card-header">
+              <h4>Waiting List</h4>
+            </div>
+            <div class="card-body">
+              <ul id="waitList" class="list-group"></ul>
+            </div>
+          </div>
+        </div>
       </div>
 
       <script type="text/javascript">
-         function runTableQuery() {
+        $(document).ready(function() {
+          function runTableQuery() {
             $.ajax({
-                  url: "/api/tables",
-                  method: "GET"
-               })
-               .then(function (tableData) {
+              url: "/api/tables",
+              method: "GET"
+            }).then(function(tableData) {
+              console.log(tableData);
+              console.log("------------------------------------");
 
-                  console.log(tableData);
-                  console.log("------------------------------------");
+              // Looping through the customers
+              for (var i = 0; i < tableData.length; i++) {
+                // Get a reference to the tableList element and populate it with tables
+                var tableList = $("#tableList");
 
-                  // Looping through the customers
-                  for (var i = 0; i < tableData.length; i++) {
+                // Then display the fields in the HTML (Section Name, Date, URL)
+                var listItem = $("<li class='list-group-item mt-4'>");
 
-                     // Get a reference to the tableList element and populate it with tables
-                     var tableList = $("#tableList");
+                listItem.append(
+                  $("<h2>").text("Table #" + (i + 1)),
+                  $("<hr>"),
+                  $("<h2>").text("ID: " + tableData[i].customerID),
+                  $("<h2>").text("Name: " + tableData[i].customerName),
+                  $("<h2>").text("Email: " + tableData[i].customerEmail),
+                  $("<h2>").text("Phone: " + tableData[i].phoneNumber)
+                );
 
-                     // Then display the fields in the HTML (Section Name, Date, URL)
-                     var listItem = $("<li class='list-group-item mt-4'>");
+                tableList.append(listItem);
+              }
+            });
+          }
 
-                     listItem.append(
-                        $("<h2>").text("Table #" + (i + 1)),
-                        $("<hr>"),
-                        $("<h2>").text("ID: " + tableData[i].customerID),
-                        $("<h2>").text("Name: " + tableData[i].customerName),
-                        $("<h2>").text("Email: " + tableData[i].customerEmail),
-                        $("<h2>").text("Phone: " + tableData[i].phoneNumber)
-                     );
-
-                     tableList.append(listItem);
-                  }
-               });
-         }
-
-         function runWaitListQuery() {
-
+          function runWaitListQuery() {
             // The AJAX function uses the URL of our API to GET the data associated with it (initially set to localhost)
             $.ajax({
-                  url: "/api/waitlist",
-                  method: "GET"
-               })
-               .then(function (waitData) {
+              url: "/api/waitlist",
+              method: "GET"
+            }).then(function(waitData) {
+              // Here we then log the waitlistData to console, where it will show up as an object.
+              console.log(waitData);
+              console.log("------------------------------------");
 
-                  // Here we then log the waitlistData to console, where it will show up as an object.
-                  console.log(waitData);
-                  console.log("------------------------------------");
+              // Loop through and display each of the customers
+              for (var i = 0; i < waitData.length; i++) {
+                // Get a reference to the waitList element and populate it with tables
+                var waitList = $("#waitList");
 
-                  // Loop through and display each of the customers
-                  for (var i = 0; i < waitData.length; i++) {
+                // Then display the fields in the HTML (Section Name, Date, URL)
+                var listItem = $("<li class='list-group-item mt-4'>");
 
-                     // Get a reference to the waitList element and populate it with tables
-                     var waitList = $("#waitList");
+                listItem.append(
+                  $("<h2>").text("Table #" + (i + 1)),
+                  $("<hr>"),
+                  $("<h2>").text("ID: " + waitData[i].customerID),
+                  $("<h2>").text("Name: " + waitData[i].customerName),
+                  $("<h2>").text("Email: " + waitData[i].customerEmail),
+                  $("<h2>").text("Phone: " + waitData[i].phoneNumber)
+                );
 
-                     // Then display the fields in the HTML (Section Name, Date, URL)
-                     var listItem = $("<li class='list-group-item mt-4'>");
+                waitList.append(listItem);
+              }
+            });
+          }
 
-                     listItem.append(
-                        $("<h2>").text("Table #" + (i + 1)),
-                        $("<hr>"),
-                        $("<h2>").text("ID: " + waitData[i].customerID),
-                        $("<h2>").text("Name: " + waitData[i].customerName),
-                        $("<h2>").text("Email: " + waitData[i].customerEmail),
-                        $("<h2>").text("Phone: " + waitData[i].phoneNumber)
-                     );
-
-                     waitList.append(listItem);
-                  }
-               });
-         }
-
-         // This function resets all of the data in our tables. This is intended to let you restart a demo.
-         function clearTable() {
+          // This function resets all of the data in our tables. This is intended to let you restart a demo.
+          function clearTable() {
             alert("Clearing...");
 
             // Clear the tables on the server and then empty the elements on the client
             $.ajax({
-               url: "/api/clear",
-               method: "POST"
-            }).then(function () {
-               $("#waitList").empty();
-               $("#tableList").empty();
+              url: "/api/clear",
+              method: "POST"
+            }).then(function() {
+              $("#waitList").empty();
+              $("#tableList").empty();
             });
-         }
+          }
 
-         $("#clear").on("click", clearTable);
+          $("#clear").on("click", clearTable);
 
-
-         // Run Queries!
-         // ==========================================
-         runTableQuery();
-         runWaitListQuery();
+          // Run Queries!
+          // ==========================================
+          runTableQuery();
+          runWaitListQuery();
+        });
       </script>
       <footer class="footer mt-4">
-         <div class="container">
-            <p>Control Panel</p>
-            <p><a href="#" id="clear">Clear Table</a> | <a href="/api/tables">API Table Link</a> | <a
-                  href="/api/waitlist">API
-                  Wait List</a>
-            </p>
-         </div>
+        <div class="container">
+          <p>Control Panel</p>
+          <p>
+            <a href="#" id="clear">Clear Table</a> |
+            <a href="/api/tables">API Table Link</a> |
+            <a href="/api/waitlist">API Wait List</a>
+          </p>
+        </div>
       </footer>
-
-   </div>
-   <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-      crossorigin="anonymous"></script>
-</body>
-
+    </div>
+  </body>
 </html>

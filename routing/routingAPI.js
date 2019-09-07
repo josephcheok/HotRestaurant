@@ -1,6 +1,6 @@
 // dependencies
 var tables = require("../data/tables");
-var waitlist = require("../data/waiting-list");
+var waitlist = require("../data/waitlist");
 
 function routingAPI(app) {
   // Displays all tables
@@ -8,7 +8,7 @@ function routingAPI(app) {
     return res.json(tables);
   });
 
-  app.get("/api/waiting-list", function(req, res) {
+  app.get("/api/waitlist", function(req, res) {
     return res.json(tables);
   });
 
@@ -32,10 +32,6 @@ function routingAPI(app) {
     // req.body hosts is equal to the JSON post sent from the user
     // This works because of our body parsing middleware
     var newTable = req.body;
-
-    // Using a RegEx Pattern to remove spaces from newCharacter
-
-    newTable.routeName = newTable.name.replace(/\s+/g, "").toLowerCase();
 
     console.log(newTable);
 
