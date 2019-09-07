@@ -25,6 +25,7 @@ var tables = [
 ];
 
 require("./routing/routingHTML")(app);
+require("./routing/routingAPI")(app);
 
 // Starts the server to begin listening
 // =============================================================
