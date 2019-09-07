@@ -77,28 +77,40 @@
          </div>
       </div>
 
+      <script type="text/javascript">
+         $(".submit").on("click", function (event) {
+            event.preventDefault();
+            var newReservation = {
+               customerName: $("#reserve-name").val().trim(),
+               phoneNumber: $("#reserve-phone").val().trim(),
+               customerEmail: $("#reserve-email").val().trim(),
+               customerID: $("#reserve-unique-id").val().trim()
+            };
 
-       <script type="text/javascript">          $(".submit").on("click", function (event) {
-                     event.preventDefault();             // Getting information from the reservation form
-                     var newReservation = {                customerName: $("#reserve-name").val().trim(),
-                        phoneNumber: $("#reserve-phone").val().trim(),
-                        customerEmail: $("#reserve-email").val().trim(),
-                        customerID: $("#reserve-unique-id").val().trim()             };
-                     console.log(newReservation);             $.post("/api/tables", newReservation,
-                        function (data) {                   if (data) {
-                              alert("Congrats on your reservation!");                   }
-                           // If a table is available... tell user they on the waiting list.                   else {
-                              alert("Sorry, all full. You're in the queue!");                   }
-                           // Clear the form when submitting                   $("#reserve-name").val("");
-                           $("#reserve-phone").val("");                   $("#reserve-email").val("");
-                           $(                      "#reserve-unique-id").val("");                }             );
-                  });       </script> <footer class="footer">
-      <div class="container">
-         <p>
-            <a href="/api/tables">API Table Link</a> |
-            <a href="/api/waitlist">API Wait List</a>
-         </p>
-      </div>
+            console.log(newReservation);
+
+            $.post("/api/tables", newReservation,
+               function (data) {
+                  if (data) {
+                     alert("Congratulations! You've reserved a table!");
+                  } else {
+                     alert("Sorry, we're fully booked atm. BUT! You're in the queue!");
+                  }
+                  $("#reserve-name").val("");
+                  $("#reserve-phone").val("");
+                  $("#reserve-email").val("");
+                  $("#reserve-unique-id").val("");
+               });
+         });
+      </script>
+      <footer class="footer">
+
+         <div class="container">
+            <p>
+               <a href="/api/tables">API Table Link</a> |
+               <a href="/api/waitlist">API Wait List</a>
+            </p>
+         </div>
       </footer>
 
    </div>
