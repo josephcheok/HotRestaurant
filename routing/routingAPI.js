@@ -1,10 +1,14 @@
 // dependencies
 var tables = require("../data/tables");
-var waitlist = require("../data/waitlist");
+var waitlist = require("../data/waiting-list");
 
 function routingAPI(app) {
   // Displays all tables
   app.get("/api/tables", function(req, res) {
+    return res.json(tables);
+  });
+
+  app.get("/api/waiting-list", function(req, res) {
     return res.json(tables);
   });
 
