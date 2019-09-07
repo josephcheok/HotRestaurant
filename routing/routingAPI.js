@@ -8,6 +8,10 @@ function routingAPI(app) {
     return res.json(tables);
   });
 
+  app.get("/api/waitlist", function(req, res) {
+    return res.json(tables);
+  });
+
   // Displays a single table, or returns false
   app.get("/api/tables/:table", function(req, res) {
     var chosen = req.params.character;
@@ -28,10 +32,6 @@ function routingAPI(app) {
     // req.body hosts is equal to the JSON post sent from the user
     // This works because of our body parsing middleware
     var newTable = req.body;
-
-    // Using a RegEx Pattern to remove spaces from newCharacter
-
-    newTable.routeName = newTable.name.replace(/\s+/g, "").toLowerCase();
 
     console.log(newTable);
 
