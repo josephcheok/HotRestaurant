@@ -1,3 +1,8 @@
+// dependencies
+var tables = require("../data/tables");
+var waitlist = require("../data/waitlist")
+
+
 // Displays all tables
 app.get("/api/tables", function(req, res) {
   return res.json(tables);
